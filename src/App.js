@@ -1,15 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-import SafeReadings  from './components/safeReadings.js';
-import DangerReadings from './components/DangerReadings';
+import './style/css/App.css';
+import SafeReadings  from './Readings/safeReadings.js';
+import DangerReadings from './DANGERS/DangerReadings';
 
 function App() {
   return (
     <div className="App">
       <h1>React App</h1>
-      
-        <SafeReadings />
+      <div className='section--one'>
+        <div className='Danger--reading--div'>
         <DangerReadings />
+        </div>
+        <div className='safe--reading--div'>
+        <SafeReadings />
+        </div>
+        
+      </div>
       
     </div>
   );

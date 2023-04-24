@@ -1,0 +1,23 @@
+.App {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    background: grey;
+}
+
+.section--one {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+
+.Danger--reading--div {
+    width: 20vw;
+}
+
+.Safe--reading--div {
+    width: 20vw;
+}
