@@ -5,12 +5,14 @@ import DangerReadings from './DANGERS/DangerReadings';
 function App() {
   return (
     <div className="App">
-      <h1>React App</h1>
+      <div className='headline'>
+      <h2 className='headlineH2'>React App</h2>
+      </div>
       <div className='section--one'>
-        <div className='Danger--reading--div'>
+        <div className='Main--reading--div'>
         <DangerReadings />
         </div>
-        <div className='safe--reading--div'>
+        <div className='Main--reading--div'>
         <SafeReadings />
         </div>
         

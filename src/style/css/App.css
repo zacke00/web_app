@@ -1,23 +1,84 @@
+body {
+    background-color: #fff;
+}
+
 .App {
     text-align: center;
+}
+
+.headlineH2 {
+    color: rgb(60, 62, 68);
+}
+
+.headline {
+    display: flex;
+    justify-content: center;
 }
 
 .container {
     display: flex;
     justify-content: center;
-    background: grey;
 }
 
 .section--one {
+    background-color: rgb(39, 43, 51);
     display: flex;
     justify-content: center;
     gap: 10%;
 }
 
-.Danger--reading--div {
-    width: 20vw;
+.Main--reading--div {
+    border-radius: 30px;
+    height: 100%;
 }
 
-.Safe--reading--div {
-    width: 20vw;
+.Repeated--div {
+    width: 30vw;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    margin-bottom: 5%;
+    background: rgb(60, 62, 68);
+}
+
+h2,
+h1,
+h3,
+p {
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+}
+
+.container-button {
+    background: hsla(var(--page-background), 1);
+    position: relative;
+    z-index: 1;
+}
+
+.button-remove {
+    all: unset;
+    color: #fff;
+    /* text */
+    font: 700 1.125rem/1.2 'Courier New', Courier, monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    /* size */
+    padding: 0.85em;
+    width: 12rem;
+    /* Button styling */
+    background: inherit;
+    background-clip: padding-box;
+    background: rgb(39, 43, 51);
+    border-radius: 2em;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: 0.25s ease-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(1);
 }
