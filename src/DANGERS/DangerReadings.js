@@ -5,10 +5,15 @@ function DangerReadings() {
   const [readings, setReadings] = useState([]);
 
   useEffect(() => {
+    const timeoutId = setTimeout(() => 
     fetch('http://localhost:3000/DANGER')
       .then(response => response.json())
-      .then(data => setReadings(data));
-  }, []);
+      .then(data => {
+        const sortedReadings = data.sort((a, b) => new Date(b.DateTime) - new Date(a.DateTime));
+        setReadings(sortedReadings.slice(0, 5));
+      }, 10000));
+      return () => clearTimeout(timeoutId);
+    }, [readings]);
 
   const handleRemove = (id) => {
     fetch(`http://localhost:3000/DANGER/${id}`, { method: 'DELETE' })

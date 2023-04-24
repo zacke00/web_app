@@ -5,13 +5,16 @@ function SafeReadings() {
   const [readingsArr, setReadings] = useState([]);
 
   useEffect(() => {
+    const timeoutId = setTimeout(() => 
     fetch('http://localhost:3000/Reading')
       .then(response => response.json())
       .then(data => {
         const sortedReadings = data.sort((a, b) => new Date(b.DateTime) - new Date(a.DateTime));
         setReadings(sortedReadings.slice(0, 5));
-      });
-  }, []);
+      }, 10000));
+      return () => clearTimeout(timeoutId);
+    }, [readingsArr]);
+
 
   const readings = readingsArr.map(reading => {
     let color = reading.Safety === "Warning" ? "#FFD300" : "#3CB371";
