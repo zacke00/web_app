@@ -1,18 +1,46 @@
+:root {
+    --background--Body: #ffffff;
+    --background--boxbackground--behind: #353535;
+    --background--boxbackground--front: #1d1d1d;
+    --background--TextColor: #c2c2c2;
+    --background--fifth: #68586e;
+}
+
 body {
-    background-color: #fff;
+    background-color: var(--background--Body);
+}
+
+.background-image {
+    background-image: url('../pictures/pxfuel.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
 .App {
     text-align: center;
 }
 
-.headlineH2 {
-    color: rgb(60, 62, 68);
-}
-
 .headline {
+    background-image: url('../pictures/pxfuel.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     display: flex;
     justify-content: center;
+    height: 37em;
+}
+
+.headline-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.headlineH2 {
+    color: var(--background--boxbackground--front);
+    margin-top: 5rem;
 }
 
 .container {
@@ -21,7 +49,7 @@ body {
 }
 
 .section--one {
-    background-color: rgb(39, 43, 51);
+    background-color: var(--background--boxbackground--behind);
     display: flex;
     justify-content: center;
     gap: 10%;
@@ -37,7 +65,7 @@ body {
     border: 1px solid transparent;
     border-radius: 30px;
     margin-bottom: 5%;
-    background: rgb(60, 62, 68);
+    background: var(--background--boxbackground--front);
 }
 
 h2,
@@ -45,18 +73,17 @@ h1,
 h3,
 p {
     font-family: 'Courier New', Courier, monospace;
-    color: #fff;
+    color: var(--background--TextColor);
 }
 
 .container-button {
-    background: hsla(var(--page-background), 1);
     position: relative;
     z-index: 1;
 }
 
 .button-remove {
     all: unset;
-    color: #fff;
+    color: var(--background--Body);
     /* text */
     font: 700 1.125rem/1.2 'Courier New', Courier, monospace;
     letter-spacing: 0.08em;
@@ -68,17 +95,24 @@ p {
     /* Button styling */
     background: inherit;
     background-clip: padding-box;
-    background: rgb(39, 43, 51);
+    background: var(--background--boxbackground--behind);
     border-radius: 2em;
     cursor: pointer;
     margin-bottom: 1rem;
     transition: 0.25s ease-out;
 }
 
-button:hover {
+.button-remove:hover {
     transform: scale(1.1);
 }
 
-button:active {
+.button-remove:active {
     transform: scale(1);
+}
+
+.Footer {
+    background-image: url('../pictures/Footer-background.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }

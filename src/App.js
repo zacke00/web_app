@@ -1,24 +1,27 @@
 import './style/css/App.css';
-import SafeReadings  from './Readings/safeReadings.js';
-import DangerReadings from './DANGERS/DangerReadings';
-import { useState, useEffect } from 'react';
+import SafeReadings  from './components/home/Readings/safeReadings.js';
+import DangerReadings from './components/home/DANGERS/DangerReadings';
+import NavigationBar from './components/navigation/NavigationBar/NavigationBar';
+import Footer from './components/navigation/Footer/Footer';
+
 
 function App() {
-  const [count, setCount] = useState(0);
-  
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-    
-      setCount(count => count + 1);
-    }, 1000);
-
-    return () => clearInterval(intervalId);
-  }, []);
   return (
     <div className="App">
+      
+      <header>
+
       <div className='headline'>
-      <h2 className='headlineH2'>React App</h2>
+        <div className='healine-container'>
+        <h2 className='headlineH2'>React App</h2>
+        <h2 className='headlineH2'>Home</h2>
+
+        </div>
+      </div>
+      </header>
+      <div>
+        <NavigationBar/>
       </div>
       <div className='section--one'>
         <div className='Main--reading--div'>
@@ -29,6 +32,9 @@ function App() {
         </div>
         
       </div>
+      <footer className='Footer'>
+        <Footer/>
+      </footer>
       
     </div>
   );

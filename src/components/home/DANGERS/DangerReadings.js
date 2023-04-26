@@ -23,13 +23,14 @@ function DangerReadings() {
       .catch(error => console.error(error));
   };
   
+ 
   return (
     <div className="container" >
       <div>
         <h1>DANGER</h1>
         {readings.map(reading => (
           <div className='Repeated--div' key={reading.id}>
-            <h3 style={{color:"red"}}>Name: {reading.name}</h3>
+            <h3>Name: {reading.Name}</h3>
             <p>Temperature: {reading.Temperature}</p>
             <p>Humidity: {reading.Humidity}</p>
             <p>Light: {reading.Light}</p>

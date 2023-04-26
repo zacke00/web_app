@@ -1,0 +1,15 @@
+.Footer-container {
+    width: 100vw;
+    height: 10rem;
+    align-items: center;
+    background-color: var(--background--fourth);
+}
+
+.Footer-nav {}
+
+.Footer-ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}

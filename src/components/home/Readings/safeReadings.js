@@ -21,7 +21,7 @@ function SafeReadings() {
 
     return (
       <div className='Repeated--div' key={reading.id}>
-        <h3>Name: {reading.name}</h3>
+        <h3>Name: {reading.Name}</h3>
         <p>Temperature: {reading.Temperature}</p>
         <p>Humidity: {reading.Humidity}</p>
         <p>Light: {reading.Light}</p>
