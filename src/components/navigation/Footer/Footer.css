@@ -1,6 +1,6 @@
 .Footer-container {
     width: 100vw;
-    height: 10rem;
+    height: 20rem;
     align-items: center;
     background-color: var(--background--fourth);
 }
@@ -12,4 +12,11 @@
     display: flex;
     justify-content: center;
     gap: 3rem;
+}
+
+.Footer {
+    background-image: url('../../../style/pictures/Footer-background.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }

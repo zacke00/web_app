@@ -1,0 +1,46 @@
+.section--one {
+    padding-top: 1rem;
+    background-color: var(--background--boxbackground--behind);
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+
+.Main--reading--div {
+    border-radius: 30px;
+    height: 100%;
+}
+
+.headlineH2 {
+    color: var(--background--boxbackground--front);
+    margin-top: 5rem;
+}
+
+.button-remove {
+    all: unset;
+    color: var(--background--Body);
+    /* text */
+    font: 700 1.125rem/1.2 'Courier New', Courier, monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    /* size */
+    padding: 0.85em;
+    width: 12rem;
+    /* Button styling */
+    background: inherit;
+    background-clip: padding-box;
+    background: var(--background--boxbackground--behind);
+    border-radius: 2em;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: 0.25s ease-out;
+}
+
+.button-remove:hover {
+    transform: scale(1.1);
+}
+
+.button-remove:active {
+    transform: scale(1);
+}

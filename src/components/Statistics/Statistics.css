@@ -1,0 +1,29 @@
+.Statistics {
+    background-image: url(../../style/pictures/Background-Graph.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.div-main-statistics {
+    height: 100vh;
+}
+
+.h1-statistics {
+    padding-top: 30px;
+    margin-top: 0;
+}
+
+.section-statistics {
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+}
+
+.div-graph-container {
+    height: 20rem;
+    width: 40rem;
+    padding: 2rem;
+    background-color: var(--background--fifth);
+    border-radius: 40px;
+    box-shadow: 0 3px 60px rgba(255, 255, 255, 0.5);
+}

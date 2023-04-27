@@ -1,0 +1,56 @@
+.Home {
+    background-image: url(../../style/pictures/Front-page-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.home-welcome {
+    padding-top: 20rem;
+}
+
+.home-background-welcome-header {
+    border-radius: 50%;
+    padding: 3rem;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px rgb(255, 255, 255);
+}
+
+h1.home-welcome-h1 {
+    font-size: 80px;
+    color: var(--background--Body);
+}
+
+.pointer-for-nav-bar-outline-div {
+    position: fixed;
+    margin-left: 75vw;
+    margin-top: 1%;
+}
+
+.pointer-for-nav-bar {
+    position: fixed;
+    height: 140px;
+    width: 130px;
+    background-image: url(../../style/pictures/pointer-nav-bar.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: rock-back-and-forth 2s infinite;
+    transform-origin: 100% 100%;
+}
+
+@keyframes rock-back-and-forth {
+    0% {
+        transform: rotateZ(-20deg);
+    }
+    50% {
+        transform: rotateZ(10deg);
+    }
+    100% {
+        transform: rotateZ(-20deg);
+    }
+}
