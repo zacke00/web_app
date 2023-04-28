@@ -5,8 +5,6 @@
     background-color: var(--background--fourth);
 }
 
-.Footer-nav {}
-
 .Footer-ul {
     list-style: none;
     display: flex;
