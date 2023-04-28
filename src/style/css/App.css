@@ -68,3 +68,7 @@ p {
     margin-left: 0;
     margin-right: 0;
 }
+
+.navigation-bar {
+    position: fixed;
+}

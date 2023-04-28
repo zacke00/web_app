@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
 import './NavigationBar.css';
-import Statistic from "../../Statistics/Statistics"
+import Statistic from "../../home/Statistics/Statistics"
 import ReadingsPage from "../../home/ReadingsPage/ReadingsPage";
 import Home from "../../home/Home";
 

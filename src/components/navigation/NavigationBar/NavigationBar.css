@@ -1,5 +1,5 @@
 .nav-container {
-    position: absolute;
+    position: fixed;
     top: 67px;
     right: 4.03rem;
     transform: translateX(50%);
@@ -20,7 +20,7 @@
 
 .Nav-Button {
     all: unset;
-    position: absolute;
+    position: fixed;
     top: 1rem;
     right: 2rem;
     transform: translateX(50%);

@@ -1,7 +1,7 @@
 import React from 'react';
 import './ReadingsPage.css';
-import SafeReadings  from '../Readings/safeReadings.js';
-import DangerReadings from '../DANGERS/DangerReadings';
+import SafeReadings  from './Readings/safeReadings.js';
+import DangerReadings from './DANGERS/DangerReadings';
 import Footer from '../../navigation/Footer/Footer';
 
 function ReadingsPage() {

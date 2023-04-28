@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Statistics.css";
-import Footer from "../navigation/Footer/Footer";
+import Footer from "../../navigation/Footer/Footer";
 import Chart from "chart.js/auto";
-import DangerReadings from "./../home/DANGERS/DangerReadings";
+
 
 function Statistics() {
   const canvasRefDanger = useRef(null);
@@ -18,11 +18,11 @@ function Statistics() {
         .then((response) => response.json())
         .then((data) => {
           const sortedReadings = data.sort(
-            (a, b) => new Date(b.DateTime) - new Date(a.DateTime)
+            (a, b) => new Date(a.DateTime) - new Date(b.DateTime)
           );
-          setDangerReadings(sortedReadings.slice(0, 5));
+          setDangerReadings(sortedReadings);
         });
-    }, 1000);
+    }, 100);
     return () => clearTimeout(timeoutId);
   }, [dangerReadings]);
 
@@ -32,20 +32,27 @@ function Statistics() {
         .then((response) => response.json())
         .then((data) => {
           const sortedReadings = data.sort(
-            (a, b) => new Date(b.DateTime) - new Date(a.DateTime)
+            (a, b) => new Date(a.DateTime) - new Date(b.DateTime)
           );
-          setSafeReadings(sortedReadings.slice(0, 5));
+          setSafeReadings(sortedReadings);
         });
-    }, 1000);
+    }, 100);
     return () => clearTimeout(timeoutId);
   }, [safeReadings]);
 
   useEffect(() => {
     if (dangerReadings.length === 0) return;
 
-    const temperature = dangerReadings.map((reading) => reading.Temperature);
-    const humidity = dangerReadings.map((reading) => reading.Humidity);
-    const labels = dangerReadings.map((reading) => new Date(reading.DateTime).toLocaleString());
+    const twentyFourHoursAgo = Date.now() - 24 * 60 * 60 * 1000;
+    const filteredReadings = dangerReadings.filter(
+      (reading) => new Date(reading.DateTime).getTime() >= twentyFourHoursAgo
+    );
+
+    const temperature = filteredReadings.map((reading) => reading.Temperature);
+    const humidity = filteredReadings.map((reading) => reading.Humidity);
+    const labels = filteredReadings.map((reading) =>
+      new Date(reading.DateTime).toLocaleString()
+    );
 
     if (!chartRefDanger.current) {
       
@@ -79,34 +86,35 @@ options: {
       title: {
         display: true,
         text: "Danger Readings",
-        color: "#ffffff", // Change title color to white
+        color: "#ffffff", 
       },
       legend: {
         labels: {
-          color: "#ffffff", // Change dataset labels color to white
+          color: "#ffffff", 
         },
       },
     },
     scales: {
       x: {
         ticks: {
-          color: "#ffffff", // Change x-axis labels color to white
+          color: "#ffffff",
         },
         title: {
           display: true,
           text: "Time",
-          color: "#ffffff", // Change x-axis title color to white
+          color: "#ffffff", 
         },
       },
       y: {
-        beginAtZero: false,
+        beginAtZero: true,
+        suggestedMax: 100,
         ticks: {
-          color: "#ffffff", // Change y-axis labels color to white
+          color: "#ffffff", 
         },
         title: {
           display: true,
           text: "Value",
-          color: "#ffffff", // Change y-axis title color to white
+          color: "#ffffff", 
         },
       },
     },
@@ -124,10 +132,16 @@ options: {
   useEffect(() => {
     if (safeReadings.length === 0) return;
 
-    const temperature = safeReadings.map((reading) => reading.Temperature);
-    const humidity = safeReadings.map((reading) => reading.Humidity);
-    const labels = safeReadings.map((reading) => new Date(reading.DateTime).toLocaleString());
+    const twentyFourHoursAgo = Date.now() - 24 * 60 * 60 * 1000;
+    const filteredReadings = safeReadings.filter(
+      (reading) => new Date(reading.DateTime).getTime() >= twentyFourHoursAgo
+    );
 
+    const temperature = filteredReadings.map((reading) => reading.Temperature);
+    const humidity = filteredReadings.map((reading) => reading.Humidity);
+    const labels = filteredReadings.map((reading) =>
+      new Date(reading.DateTime).toLocaleString()
+    );
     if (!chartRefSafe.current) {
       
         
@@ -159,35 +173,36 @@ options: {
     plugins: {
       title: {
         display: true,
-        text: "Danger Readings",
-        color: "#ffffff", // Change title color to white
+        text: "Safe Readings",
+        color: "#ffffff", 
       },
       legend: {
         labels: {
-          color: "#ffffff", // Change dataset labels color to white
+          color: "#ffffff", 
         },
       },
     },
     scales: {
       x: {
         ticks: {
-          color: "#ffffff", // Change x-axis labels color to white
+          color: "#ffffff", 
         },
         title: {
           display: true,
           text: "Time",
-          color: "#ffffff", // Change x-axis title color to white
+          color: "#ffffff", 
         },
       },
       y: {
-        beginAtZero: false,
+        beginAtZero: true,
+        suggestedMax: 100,
         ticks: {
-          color: "#ffffff", // Change y-axis labels color to white
+          color: "#ffffff", 
         },
         title: {
           display: true,
           text: "Value",
-          color: "#ffffff", // Change y-axis title color to white
+          color: "#ffffff", 
         },
       },
     },
@@ -210,7 +225,7 @@ options: {
       <div className="div-main-statistics">
         <main className="main-statistics">
           <h2>Statistics</h2>
-          <p>Here you can see the statistics of the website</p>
+          <p>Statistics of 24 hours watchin bananas and pineapples</p>
           <section className="section-statistics">
             <div className="div-graph-container">
 
