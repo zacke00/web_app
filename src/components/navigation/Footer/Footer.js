@@ -11,18 +11,21 @@ function Footer() {
             <nav className="Footer-nav">
                 <ul className="Footer-ul">
                     <li>
-                        <div>
-                        <p>*TODO fix a circle and a information bench*</p>
+                        <div className="icon-fake-div">
+                            <div className="icon-Facebook"></div>
+                        <p style={{color:"black"}}>FAKEbook</p>
                         </div>
                     </li>
                     <li>
-                        <div>
-                        <p>*TODO fix a circle and a information bench*</p>
+                        <div className="icon-fake-div">
+                            <div className="icon-Instagram"></div>
+                        <p style={{color:"black"}}>instaFAKE</p>
                         </div>
                     </li>
                     <li>
-                        <div>
-                        <p>*TODO fix a circle and a information bench*</p>
+                        <div className="icon-fake-div">
+                            <div className="icon-Twitter"></div>
+                        <p style={{color:"black"}}>Twatter</p>
                         </div>
                     </li>
                 </ul>

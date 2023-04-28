@@ -15,8 +15,6 @@ function Home() {
             <div className="home-welcome">
                 <div className="home-background-welcome-header">
             <h1 className="home-welcome-h1">Welcome!</h1>
-            
-            <p>Home page body content</p>
 
                 </div>
             </div>

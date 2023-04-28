@@ -11,12 +11,43 @@
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 10rem;
+    margin-top: 10rem;
 }
 
 .Footer {
-    background-image: url('../../../style/pictures/Footer-background.jpg');
+    background-image: url(../../../style/pictures/Footer-background.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+}
+
+.icon-fake-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0rem;
+}
+
+.icon-Facebook {
+    background-image: url(../../../style/pictures/Fakebook.png);
+    height: 100%;
+    margin-left: 1.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-Instagram {
+    background-image: url(../../../style/pictures/instaFake.png);
+    height: 50px;
+    margin-left: 1.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-Twitter {
+    background-image: url(../../../style/pictures/Twitter.png);
+    height: 50px;
+    margin-left: 1.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
 }

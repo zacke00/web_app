@@ -41,7 +41,7 @@ function Statistics() {
   }, [safeReadings]);
 
   useEffect(() => {
-    if (dangerReadings.length === 0) return;
+    if (dangerReadings.length === 0) {return; };
 
     const twentyFourHoursAgo = Date.now() - 24 * 60 * 60 * 1000;
     const filteredReadings = dangerReadings.filter(
