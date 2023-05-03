@@ -2,9 +2,11 @@ import react from 'react';
 import './Home.css';
 import Footer from '../navigation/Footer/Footer.js';
 
+
 function Home() {
 
     return(
+
     <div className='body'>
                 <div className="pointer-for-nav-bar-outline-div">
                     <div className="pointer-for-nav-bar">
@@ -16,6 +18,7 @@ function Home() {
 
                 <div className="Home-welcome">
                     <div className="Home-background-welcome-header">
+                    
                         <h1 className="Home-welcome-h1">Welcome!</h1>
                     </div>
                 </div>
@@ -28,6 +31,7 @@ function Home() {
         </div>
 
     </div>
+
 
     )
 }
