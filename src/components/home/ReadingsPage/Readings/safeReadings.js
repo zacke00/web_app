@@ -11,7 +11,7 @@ function SafeReadings() {
       .then(data => {
         const sortedReadings = data.sort((a, b) => new Date(b.DateTime) - new Date(a.DateTime));
         setReadings(sortedReadings.slice(0, 5));
-      }, 10000));
+      }, 1000));
       return () => clearTimeout(timeoutId);
     }, [readingsArr]);
 
