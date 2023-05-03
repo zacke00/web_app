@@ -19,7 +19,7 @@ function Footer() {
                     <li>
                         <div className="icon-fake-div">
                             <div className="icon-Instagram"></div>
-                        <p style={{color:"black"}}>instaFAKE</p>
+                        <p style={{color:"black"}}>InstaMilligram</p>
                         </div>
                     </li>
                     <li>
