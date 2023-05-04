@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Statistics.css";
 import Footer from "../../navigation/Footer/Footer";
-import Chart from "chart.js/auto";
+import Chart from 'chart.js/auto';
 
 
 function Statistics() {
@@ -90,19 +90,19 @@ options: {
       },
       legend: {
         labels: {
-          color: "#ffffff", 
+          titleFontColor: "#ffffff", 
         },
       },
     },
     scales: {
       x: {
         ticks: {
-          color: "#ffffff",
+          color: "white",
         },
         title: {
           display: true,
           text: "Time",
-          color: "#ffffff", 
+          color: "white", 
         },
       },
       y: {
