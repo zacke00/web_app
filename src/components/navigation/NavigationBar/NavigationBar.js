@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
 import './NavigationBar.css';
 import Statistic from "../../home/Statistics/Statistics"
 import ReadingsPage from "../../home/ReadingsPage/ReadingsPage";
+import Dashboard from "../../home/Dashboard/Dashboard";
 import Home from "../../home/Home";
 
 
@@ -28,6 +29,7 @@ function NavigationBar() {
             <nav>
               <ul>
                 <li><Link to="/"><p>Home</p></Link></li>
+                <li><Link to="/Dashboard"><p>Dashboard</p></Link></li>
                 <li><Link to="/ReadingsPage"><p>ReadingsPage</p></Link></li>
                 <li><Link to="/Statistics"><p>Statistics</p></Link></li>
               </ul>
@@ -38,6 +40,7 @@ function NavigationBar() {
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/Dashboard" element={<Dashboard />}></Route>
             <Route path="/ReadingsPage" element={<ReadingsPage />} />
             <Route path="/Statistics" element={<Statistic />} />
           </Routes>
