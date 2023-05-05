@@ -51,6 +51,7 @@ const LiveData = ( { topic }) => {
   subscribeToTopic(topic);
 
   socket.onmessage = (event) => {
+    console.log('Received WebSocket message:', event.data);
     const messageData = JSON.parse(event.data);
     setData(messageData);
     setName(messageData.name)
