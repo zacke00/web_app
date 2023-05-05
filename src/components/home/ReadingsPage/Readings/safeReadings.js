@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 
-function SafeReadings() {
+function SafeReadings({ReadingName}) {
   const [readingsArr, setReadings] = useState([]);
 
   useEffect(() => {
@@ -9,7 +9,8 @@ function SafeReadings() {
     fetch('http://localhost:3000/Reading')
       .then(response => response.json())
       .then(data => {
-        const sortedReadings = data.sort((a, b) => new Date(b.DateTime) - new Date(a.DateTime));
+        const filteredReadings = data.filter(reading => reading.Name === ReadingName);
+        const sortedReadings = filteredReadings.sort((a, b) => new Date(b.DateTime) - new Date(a.DateTime));
         setReadings(sortedReadings.slice(0, 5));
       }, 1000));
       return () => clearTimeout(timeoutId);

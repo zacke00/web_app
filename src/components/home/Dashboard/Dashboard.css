@@ -3,6 +3,7 @@
     --grey--blue: #6e8898ff;
     --light--grey: #9fb1bcff;
     --beach: #d3d0cbff;
+    overflow-x: hidden;
 }
 
 .header-div-dashboard {
