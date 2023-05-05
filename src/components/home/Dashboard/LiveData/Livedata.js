@@ -6,7 +6,7 @@ import GaugeChart from './Gauge/Livedatacharts';
 
 
 
-const LiveData = () => {
+const LiveData = ( { topic }) => {
   const [data, setData] = useState(null);
   const [temperature, setTemperature] = useState(0);
   const [humidity, setHumidity] = useState(0);
@@ -33,27 +33,55 @@ const LiveData = () => {
       return "yellow";
     
   };
+  // useEffect(() => {
+  //   const wsUrl = 'ws://localhost:3002';
+  //   const socket = new ReconnectingWebSocket(wsUrl);
+  //   socket.onmessage = (event) => {
+  //     const messageData = JSON.parse(event.data);
+  //     setData(messageData);
+  //     setTemperature(messageData.temperature);
+  //     setHumidity(messageData.humidity);
+  //     setLight(messageData.light);
+  //   };
+
+  //   return () => {
+  //     socket.close();
+  //   };
+  // }, []);
   useEffect(() => {
     const wsUrl = 'ws://localhost:3002';
     const socket = new ReconnectingWebSocket(wsUrl);
-    socket.onmessage = (event) => {
-      const messageData = JSON.parse(event.data);
-      setData(messageData);
-      setTemperature(messageData.temperature);
-      setHumidity(messageData.humidity);
-      setLight(messageData.light);
-    };
+  
+  const subscribeToTopic = (topic) => {
+    socket.send(JSON.stringify({ action: 'subscribe', topic }));
+  };
 
-    return () => {
-      socket.close();
-    };
-  }, []);
+  const unsubscribeFromTopic = (topic) => {
+    socket.send(JSON.stringify({ action: 'unsubscribe', topic }));
+  };
 
+  // Subscribe to the provided topic
+  subscribeToTopic(topic);
+
+  socket.onmessage = (event) => {
+    const messageData = JSON.parse(event.data);
+    setData(messageData);
+    setTemperature(messageData.temperature);
+    setHumidity(messageData.humidity);
+    setLight(messageData.light);
+  };
+
+  return () => {
+    // Unsubscribe from the topic before closing the socket
+    unsubscribeFromTopic(topic);
+    socket.close();
+  };
+}, [topic]);
 
   return (
     <div>
       {data ? (
-        <div className='container'>
+        <div className='div-dashboard'>
           
           <div className='Temperature-outer-div'>
             <div className='Temperature-inner-div'>
@@ -86,6 +114,12 @@ const LiveData = () => {
             label="Light" 
             color={changeLightColor()}/>
           
+          </div>
+        </div>
+          <div className='Info-outer-div'>
+            <div className='Info-inner-div'>
+              <p className='Temp-p'>Temperature safe reading: 29 - 33</p>
+              <p className='Humid-p'>Humidity safe reading: 48 - 58</p>
           </div>
         </div>
           

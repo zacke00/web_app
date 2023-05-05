@@ -3,17 +3,29 @@
 .Temperature-outer-div,
 .Humidity-outer-div,
 .Light-outer-div {
-    background-color: rgb(40, 40, 43);
-    height: 70vh;
-    width: 30vw;
+    background-color: rgb(54, 54, 54);
+    box-shadow: 0 0px 20px rgb(95, 95, 95);
+    height: 80%;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 2rem;
+    margin: auto;
 }
 
 .Temperature-inner-div,
 .Humidity-inner-div,
-.Light-inner-div {}
+.Light-inner-div {
+    background-color: rgb(26, 26, 26);
+    height: 83%;
+    width: 90%;
+    border-radius: 1.2rem;
+    box-shadow: 0 0px 20px rgb(95, 95, 95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 /* Temperature */
@@ -35,3 +47,31 @@
 .Light-outer-div {}
 
 .Light-inner-div {}
+
+
+/* Information */
+
+.Info-outer-div {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.Info-inner-div {
+    height: 83%;
+    width: 90%;
+    display: flex;
+    justify-content: top;
+    align-items: top;
+}
+
+p.Temp-p {
+    border-top: 1px solid white;
+}
+
+p.Humid-p {
+    border-top: 1px solid white;
+    border-left: 1px dotted white;
+}

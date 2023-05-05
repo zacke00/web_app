@@ -8,10 +8,7 @@ function Home() {
     return(
 
     <div className='body'>
-                <div className="pointer-for-nav-bar-outline-div">
-                    <div className="pointer-for-nav-bar">
-                    </div>
-                </div>
+
         <div className="Home-center">
         <div className="Home1">
         <div className="Home2">

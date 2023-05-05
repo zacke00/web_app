@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import 'chartjs-plugin-datalabels';
+import "./Livedatacharts.css"
 
 const GaugeChart = ({ value, min, max, label , color}) => {
   const canvasRef = useRef(null);

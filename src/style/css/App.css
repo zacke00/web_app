@@ -13,7 +13,7 @@ body {
 .Front-page {
     height: 1080px;
     background-image: url(../pictures/Front-page-background.jpg);
-    z-index: -10;
+    z-index: 4;
 }
 
 .background-image {
@@ -67,8 +67,4 @@ p {
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
-}
-
-.navigation-bar {
-    position: fixed;
 }

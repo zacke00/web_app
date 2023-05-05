@@ -17,7 +17,7 @@ function NavigationBar() {
 
   return (
     <BrowserRouter>
-      <div>
+      <div className="body-nav">
         <button className={`Nav-Button ${showMenu ? 'rotate' : ''}`} onClick={toggleMenu}>
           <div className={`div-menu-icon-1 ${showMenu ? 'rotate' : ''}`}></div>
           <div className={`div-menu-icon-2 ${showMenu ? 'remove' : ''}`}></div>
