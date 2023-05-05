@@ -11,6 +11,7 @@ const LiveData = ( { topic }) => {
   const [temperature, setTemperature] = useState(0);
   const [humidity, setHumidity] = useState(0);
   const [light, setLight] = useState(0);
+  const [name, setName] = useState(0);
 
 
   
@@ -33,21 +34,7 @@ const LiveData = ( { topic }) => {
       return "yellow";
     
   };
-  // useEffect(() => {
-  //   const wsUrl = 'ws://localhost:3002';
-  //   const socket = new ReconnectingWebSocket(wsUrl);
-  //   socket.onmessage = (event) => {
-  //     const messageData = JSON.parse(event.data);
-  //     setData(messageData);
-  //     setTemperature(messageData.temperature);
-  //     setHumidity(messageData.humidity);
-  //     setLight(messageData.light);
-  //   };
 
-  //   return () => {
-  //     socket.close();
-  //   };
-  // }, []);
   useEffect(() => {
     const wsUrl = 'ws://localhost:3002';
     const socket = new ReconnectingWebSocket(wsUrl);
@@ -66,6 +53,7 @@ const LiveData = ( { topic }) => {
   socket.onmessage = (event) => {
     const messageData = JSON.parse(event.data);
     setData(messageData);
+    setName(messageData.name)
     setTemperature(messageData.temperature);
     setHumidity(messageData.humidity);
     setLight(messageData.light);
@@ -82,13 +70,13 @@ const LiveData = ( { topic }) => {
     <div>
       {data ? (
         <div className='div-dashboard'>
-          
           <div className='Temperature-outer-div'>
             <div className='Temperature-inner-div'>
+            
             <GaugeChart value={temperature} 
             min={0} 
             max={50} 
-            label="Temperature" 
+            label={`${name}:  Temperature`} 
             color={changeTempeColor()}/>
               
             </div>
