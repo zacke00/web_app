@@ -6,6 +6,11 @@
     overflow-x: hidden;
 }
 
+.body-dashboard {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .header-div-dashboard {
     background-image: url(../../../style/pictures/background-dashboard.jpg);
     background-repeat: no-repeat;
@@ -24,7 +29,7 @@
 }
 
 .outer-div-dashboard {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(auto, minmax(0, 1fr)) 1fr;
     background-color: var(--dark--blue);
@@ -51,6 +56,11 @@
     box-sizing: border-box;
 }
 
+.sticky {
+    position: sticky;
+    top: 0;
+}
+
 
 /*  display statistics  */
 
@@ -67,4 +77,13 @@
 
 .Nav-Button {
     z-index: 100;
+}
+
+.side-info-wrapper {
+    position: sticky;
+    top: 1rem;
+}
+
+.side-info-dashboard {
+    width: 60%;
 }

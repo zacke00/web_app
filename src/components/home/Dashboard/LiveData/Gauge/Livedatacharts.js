@@ -25,6 +25,7 @@ const GaugeChart = ({ value, min, max, label , color}) => {
         labels: [label],
         datasets: [
           {
+            label: [label],
             data: [value],
             backgroundColor: [gradient],
             borderWidth: 0,
@@ -36,10 +37,11 @@ const GaugeChart = ({ value, min, max, label , color}) => {
         maintainAspectRatio: true,
         plugins: {
           datalabels: {
-            color: '#000',
+            color: '#ffffff',
             formatter: (value, ctx) => `${value} °C`,
             anchor: 'end',
             align: 'top',
+            
           },
         },
         scales: {
@@ -51,6 +53,7 @@ const GaugeChart = ({ value, min, max, label , color}) => {
             min: min || 0,
             max: max || 100,
             ticks: {
+              color: '#ffffff',
               stepSize: 1,
             },
           },

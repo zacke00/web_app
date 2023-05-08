@@ -69,15 +69,17 @@ const LiveData = ( { topic }) => {
 
   return (
     <div>
+            <p>
+              {name}
+              </p>
       {data ? (
         <div className='div-dashboard'>
           <div className='Temperature-outer-div'>
             <div className='Temperature-inner-div'>
-            
             <GaugeChart value={temperature} 
             min={0} 
             max={50} 
-            label={`${name}:  Temperature`} 
+            label={`Temperature`} 
             color={changeTempeColor()}/>
               
             </div>
