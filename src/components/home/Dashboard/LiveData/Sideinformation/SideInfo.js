@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Chart, { register } from 'chart.js/auto';
 import 'chartjs-adapter-date-fns';
 import './sideInfo.css';
-import { color } from 'd3';
+
 
 function SideInfo() {
   const [weather, setWeather] = useState(null);
